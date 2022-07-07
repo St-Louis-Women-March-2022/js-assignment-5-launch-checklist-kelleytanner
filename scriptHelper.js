@@ -21,7 +21,10 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+   let pilotStatus = document.getElementById('pilotStatus');
+   let copilotStatus = document.getElementById('copilotStatus');
+   let fuelLevel = document.getElementById('fuelLevel');
+   let cargoLevel = document.getElementById('cargoLevel');
 }
 
 async function myFetch() {
