@@ -39,6 +39,16 @@ function validateInput(testInput) {
 	}
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+
+    if (validateInput(pilot) == "Empty" || validateInput(copilot) == "Empty" || validateInput(fuelLevel) == "Empty" || validateInput(cargoLevel) == "Empty") {
+        alert("All fields are required!");
+        return;
+    } else if (validateInput(pilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Empty") {
+        alert("Make sure to enter valid information for each field!");
+    }
+
+}
+
    let pilotStatus = document.getElementById('pilotStatus');
    let copilotStatus = document.getElementById('copilotStatus');
    let fuelStatus = document.getElementById('fuelStatus');
@@ -57,7 +67,8 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
-    //math.random
+    let i = Math.floor(Math.random()*6);
+    return planets[i];
 }
 
 // module.exports.addDestinationInfo = addDestinationInfo;

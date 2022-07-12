@@ -18,15 +18,17 @@ window.addEventListener("load", function() {
     // add event listener 
     let form = document.querySelector('form');
     list.style.visibility = "visible";
+    
     form.addEventListener("submit", function (event) { 
-    // faultitems list getelementbyid 
-    event.preventDefault();
+    // faultyitems list getelementbyid 
+    // event.preventDefault();
     let list = document.getElementById('faulyItems');
     let pilot = document.querySelector('input[name=pilotStatus]');
-    let copilot = document.querySelector('copilotStatus');
-    let fuelLevel = document.querySelector('fuelLevel');
-    let cargoLevel = document.querySelector('cargoLevel');
-    list.style.visibility = "visible";
+    let copilot = document.querySelector('input[name=copilotStatus]');
+    let fuelLevel = document.querySelector('input[name=fuelLevel]');
+    let cargoLevel = document.querySelector('input[name=cargoLevel]');
+    // list.style.visibility = "visible";
     formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
+    event.preventDefault();
 });
 });
