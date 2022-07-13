@@ -54,7 +54,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         
     } else if (validateInput(pilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number") {
         alert("Make sure to enter valid information for each field!");
-
+// If the user submits a fuel level that is too low (less than 10,000 liters)
     } if (fuelLevel < 10000) {
         list.style.visbility = "visible";
     document.getElementById("launchStatus").innerHTML = `Shuttle Not Ready For Launch`;
@@ -62,27 +62,26 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`;
     document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is ready for launch`;
     document.getElementById("launchStatus").style.color = "red";
-        // list.style.visbility = "visible";
-    } if (cargoLevel > 1000) {
+// If the user submits a cargo mass that is too large (more than 10,000 kilograms)
+    } if (cargoLevel > 10000) {
         list.style.visbility = "visible";
         document.getElementById("launchStatus").innerHTML = `Shuttle Not Ready For Launch`;
         document.getElementById("cargoStatus").innerHTML = `Cargo mass too high for launch.`;
         document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`;
         document.getElementById("copilotStatus").innerHTML = `Co-Pilot ${copilot} is ready for launch`;
         document.getElementById("launchStatus").style.color = "red";
-        // list.style.visibility = "visible";
-    } if ((fuelLevel > 1000) && (cargoLevel < 1000)) {
+        // if shuttle is ready for launch
+    } else {
         list.style.visbility = "visible";
         document.getElementById("launchStatus").innnerHTML = `Shuttle is Ready for Launch`;
         document.getElementById("launchStatus").style.color = 'green';
         document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`;
+        document.getElementById("copilotStatus").innerHTML = `Co-Pilot ${copilot} is ready for launch`;
         document.getElementById("fuelStatus").innerHTML = `Fuel level high enough for launch`;
         document.getElementById("cargoStatus").innerHTML = `Cargo mass low enough for launch`;
         // list.style.visibility = "visible";
     }
     
-
-
 //    list.style.visibility = "visible";
 //    console.log(alert);
 };
