@@ -49,10 +49,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     // let cargoStatus = document.getElementById('cargoStatus');
     // let list = document.getElementById('faultyItems');
 
+// if fields are left empty
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
         alert("All fields are required!");
-        
-    } else if (validateInput(pilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number") {
+// if names are numbers or fuel/cargo is not 
+    } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number"|| validateInput(cargoLevel) === "Not a Number") {
         alert("Make sure to enter valid information for each field!");
 
     } if (fuelLevel < 10000) {
@@ -73,7 +74,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         document.getElementById("copilotStatus").innerHTML = `Co-Pilot ${copilot} is ready for launch`;
         document.getElementById("launchStatus").style.color = "red";
     
-    } else {
+    } if ((fuelLevel > 10000) && (cargoLevel < 10000))  {
             // if shuttle is ready for launch
         list.style.visbility = "visible";
         document.getElementById("launchStatus").innerHTML = `Shuttle is Ready for Launch`;

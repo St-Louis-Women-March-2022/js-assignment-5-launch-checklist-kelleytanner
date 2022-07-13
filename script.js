@@ -24,8 +24,9 @@ window.addEventListener("load", function() {
     
   // add event listener 
     form.addEventListener("submit", function (event) { 
-    // faultyitems list getelementbyid 
+    
     event.preventDefault();
+    // queryselector tied into index.html 
     let pilotName = document.querySelector('input[name=pilotName]');
     let copilotName = document.querySelector('input[name=copilotName]');
     let fuelLevel = document.querySelector('input[name=fuelLevel]');
@@ -33,7 +34,7 @@ window.addEventListener("load", function() {
     let list = document.getElementById('faultyItems');
     list.style.visibility = "visible";
     formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
-    // list.style.visibility = "visible";
+    
   
     // event.preventDefault();
 });
