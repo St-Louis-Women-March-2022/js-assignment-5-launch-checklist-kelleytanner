@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-// const { myFetch, pickPlanet, addDestinationInfo, validateInput, formSubmission } = require("./scriptHelper");
+// const { formSubmission } = require("./scriptHelper");
 
 
 window.addEventListener("load", function() {
@@ -19,10 +19,10 @@ window.addEventListener("load", function() {
        addDestinationInfo(window.document, planetSelected.name, planetSelected.diameter, planetSelected.star,
            planetSelected.distance, planetSelected.moons, planetSelected.image);
     });
-    // add event listener 
+
     let form = document.querySelector('form');
     
-
+  // add event listener 
     form.addEventListener("submit", function (event) { 
     // faultyitems list getelementbyid 
     event.preventDefault();
@@ -32,8 +32,9 @@ window.addEventListener("load", function() {
     let cargoLevel = document.querySelector('input[name=cargoLevel]');
     let list = document.getElementById('faultyItems');
     list.style.visibility = "visible";
+    formSubmission(document, list, pilot.value, copilot.value, fuelLevel.value, cargoLevel.value);
     // list.style.visibility = "visible";
-    formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
+  
     // event.preventDefault();
 });
 });
