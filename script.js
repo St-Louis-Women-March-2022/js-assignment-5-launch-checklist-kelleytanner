@@ -13,12 +13,14 @@ window.addEventListener("load", function() {
    }).then(function () {
        console.log(listedPlanets);
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
- 
+       let planetSelected = pickPlanet(listedPlanets);
+       addDestinationInfo(window.document, planetSelected.name, planetSelected.diameter, planetSelected.star,
+           planetSelected.distance, planetSelected.moons, planetSelected.image)
     })
     // add event listener 
     let form = document.querySelector('form');
     list.style.visibility = "visible";
-    
+
     form.addEventListener("submit", function (event) { 
     // faultyitems list getelementbyid 
     // event.preventDefault();
